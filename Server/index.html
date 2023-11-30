@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Bike Spots</title>
+    <style>
+        .train {
+            border: 2px solid black;
+            display: flex;
+            padding: 20px;
+            width: 90%;
+            margin: 20px auto;
+        }
+        .cabin {
+            border: 1px solid grey;
+            flex: 1;
+            padding: 20px;
+            margin: 10px;
+            position: relative;
+        }
+        .bike-spot {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: red;
+            margin: 10px;
+            display: inline-block;
+        }
+        .sensor {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<div class="train">
+    <div class="cabin">
+        <!-- Static bike spots -->
+        <div class="bike-spot"></div>
+        <div class="bike-spot"></div>
+        <div class="bike-spot"></div>
+        <div class="bike-spot"></div>
+        <!-- Bike spots connected to sensors -->
+        <div class="bike-spot sensor" id="sensor1"></div>
+        <div class="bike-spot sensor" id="sensor2"></div>
+    </div>
+</div>
+
+<script>
+    // Function to update sensor status on the webpage
+    function updateSensorStatus(sensorId, status) {
+        const sensorElem = document.getElementById(sensorId);
+
+        if (status == 1) {
+            sensorElem.style.backgroundColor = 'red';
+        } else {
+            sensorElem.style.backgroundColor = 'green';
+        }
+    }
+
+    // Function to fetch sensor data from the server and update the webpage
+    function fetchAndUpdate() {
+        fetch('/sensorData')
+            .then(response => response.json())
+            .then(data => {
+                updateSensorStatus('sensor1', data.sensor1);
+                updateSensorStatus('sensor2', data.sensor2);
+            })
+            .catch(error => {
+                console.error('Error fetching sensor data:', error);
+            });
+    }
+
+    // Set up polling to fetch data every 2 seconds
+    setInterval(fetchAndUpdate, 2000);
+</script>
+
+</body>
+</html>
