@@ -43,8 +43,7 @@ To set up the system:
    - Flash `Data Aggregator` code onto each Arduino Uno.
    - Flash `Master Controller` code onto the Arduino Uno R4 WIFI.
 3. **Server and UI Setup**:
-   - Deploy `server.js` to AWS Elastic Beanstalk.
-   - Host the contents of `/ClientUI` on a suitable web server.
+   - Deploy `server.js` to AWS Elastic Beanstalk, and host the rest of `Server` on a suitable web server.
 
 ## Usage
 
