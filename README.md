@@ -31,8 +31,8 @@ This repository is organized into several directories, each containing specific 
 The project utilizes the following hardware components:
 
 - 2 x HC-SR05 Ultrasonic Sensors: Attached to separate Arduino Uno boards.
-- 2 x Arduino Uno: Each programmed with `SensorModule.ino` for sensor data collection.
-- 1 x Arduino Uno R4 WIFI: Flashed with `MasterController.ino` for data aggregation and cloud communication.
+- 2 x Arduino Uno: Each programmed with `Data Aggregator` for sensor data collection.
+- 1 x Arduino Uno R4 WIFI: Flashed with `Master Controller` for data aggregation and cloud communication.
 
 ## Getting Started
 
@@ -40,8 +40,8 @@ To set up the system:
 
 1. **Hardware Assembly**: Connect the HC-SR05 sensors to the respective Arduino Uno units as per the circuit diagrams provided in `/Diagrams`.
 2. **Flashing the Code**:
-   - Flash `SensorModule.ino` onto each Arduino Uno.
-   - Flash `MasterController.ino` onto the Arduino Uno R4 WIFI.
+   - Flash `Data Aggregator` code onto each Arduino Uno.
+   - Flash `Master Controller` code onto the Arduino Uno R4 WIFI.
 3. **Server and UI Setup**:
    - Deploy `server.js` to AWS Elastic Beanstalk.
    - Host the contents of `/ClientUI` on a suitable web server.
