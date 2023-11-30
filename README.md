@@ -18,8 +18,8 @@ This project employs a multi-tier architecture involving sensing units, data agg
 This repository is organized into several directories, each containing specific components of the system:
 
 - `/Arduino`: Contains the Arduino sketches for the different modules.
-  - `SensorModule.ino`: Code for the HC-SR05 Ultrasonic Sensors attached to Arduino Unos. This sketch handles the distance measurement and transmits the status to the master controller.
-  - `MasterController.ino`: Arduino Uno R4 WIFI code. It aggregates sensor data and sends it to the cloud server.
+  - `Data Aggregator`: Code for the Arduino Unos attached to the HC-SR05 Ultrasonic Sensors. This sketch handles the distance measurement and transmits the status to the master controller.
+  - `Master Controller`: Arduino Uno R4 WIFI code. It aggregates sensor data and sends it to the cloud server.
 - `/Server`: Includes all the code for the cloud server hosted on AWS Elastic Beanstalk
   - `server.js`: Node.js server script managing incoming data and updating the UI in real-time.
   - `index.html`: Main HTML file for the user interface.
