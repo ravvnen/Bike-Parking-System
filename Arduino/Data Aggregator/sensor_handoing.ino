@@ -5,17 +5,19 @@
 long duration;
 int distance;
 
-SoftwareSerial mySerial(10, 11);  // RX, TX
+SoftwareSerial mySerial(10, 11); // RX, TX
 
-void setup() {
+void setup()
+{
   Serial.begin(57600);
-  
+
   // HC-SR04 sensor setup
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
 
-  while (!Serial) {
-    ;  // wait for serial port to connect. Needed for native USB port only
+  while (!Serial)
+  {
+    ; // wait for serial port to connect. Needed for native USB port only
   }
 
   Serial.println("Goodnight moon!");
@@ -25,33 +27,39 @@ void setup() {
   mySerial.println("Hello, world?");
 }
 
-void loop() {
+void loop()
+{
   // Measure distance using HC-SR04
-  digitalWrite(trigPin, LOW);  
-  delayMicroseconds(2); 
-  digitalWrite(trigPin, HIGH);
-  delayMicroseconds(10); 
   digitalWrite(trigPin, LOW);
-  
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+
   duration = pulseIn(echoPin, HIGH);
-  distance = (duration/2) / 29.1;  // Convert to distance
+  distance = (duration / 2) / 29.1; // Convert to distance
 
   // If distance is less than 20cm (indicating something is detected), send '1', otherwise send '0'.
-  if (distance < 20 && distance > 0) {
+  if (distance < 20 && distance > 0)
+  {
     mySerial.write('1');
     Serial.write('1');
-  } else {
+  }
+  else
+  {
     mySerial.write('0');
     Serial.write('0');
   }
 
-  if (mySerial.available()) {
+  if (mySerial.available())
+  {
     Serial.write(mySerial.read());
   }
 
-  if (Serial.available()) {
+  if (Serial.available())
+  {
     mySerial.write(Serial.read());
   }
 
-  delay(2000);  // Delay a bit before the next loop iteration for stable readings
+  delay(2000); // Delay a bit before the next loop iteration for stable readings
 }

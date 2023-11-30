@@ -64,6 +64,6 @@ This project is licensed under the MIT License - see the `LICENSE.md` file for d
 
 ## Contact
 
-Phillip Ravn Boe Jensen - [s233478@student.dtu.dk](mailto:s233478@student.dtu.dk)
+Phillip Ravn Boe Jensen - [phillip.boe.jensen@gmail.com](mailto:phillip.boe.jensen@gmail.com)
 
 Project Link: [https://github.com/ravvnen/Bike-Parking-System](https://github.com/ravvnen/Bike-Parking-System)
