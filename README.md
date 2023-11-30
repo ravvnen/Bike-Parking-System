@@ -58,10 +58,6 @@ Once the system is set up and running:
 
 Contributions to the Bike Parking System project are welcome. Please read `CONTRIBUTING.md` for details on our code of conduct, and the process for submitting pull requests.
 
-## License
-
-This project is licensed under the MIT License - see the `LICENSE.md` file for details.
-
 ## Contact
 
 Phillip Ravn Boe Jensen - [phillip.boe.jensen@gmail.com](mailto:phillip.boe.jensen@gmail.com)
